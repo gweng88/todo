@@ -1,0 +1,13 @@
+todo
+
+add reset timer field
+add checkboxes to TodoItem
+add localStorage
+update modal to have real fields
+edit mode
+    on click a section, open a modal and edit the section
+
+
+
+
+Add About Modal
