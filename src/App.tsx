@@ -1,11 +1,11 @@
-import Header from './Components/Header';
-import MainBody from './Components/MainBody';
+import PageHeader from './Components/PageHeader';
+import TodoContainer from './Components/TodoContainer';
 
 function App() {
   return (
     <div>
-      <Header/>
-      <MainBody/>
+      <PageHeader/>
+      <TodoContainer/>
     </div>
   );
 }
