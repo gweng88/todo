@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
  why does the button automatically align to the right
 */
 
-function PageHeader() {
+const PageHeader = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">

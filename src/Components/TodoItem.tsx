@@ -1,11 +1,11 @@
 import Box from "@mui/material/Box";
 import Typography from '@mui/material/Typography';
 
-export interface TodoItemProps {
+interface TodoItemProps {
   content: string
 }
 
-function TodoItem(props: TodoItemProps) {
+const TodoItem = (props: TodoItemProps) => {
   return (
     <Box>
       <Typography align="left">

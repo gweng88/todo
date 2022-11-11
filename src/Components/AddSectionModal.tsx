@@ -2,14 +2,18 @@ import { Button } from '@mui/material';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Typography from '@mui/material/Typography';
+import TextField from '@mui/material/TextField';
+import { useState } from 'react';
 
-export interface AddSectionModalProps{
+import { TodoSectionData } from '../Schemas';
+
+export interface AddSectionModalProps {
   showModal: boolean,
   onClose: () => void,
-  onClickFinishButton: () => void
+  onClickFinishButton: (data: TodoSectionData) => void
 }
 
-function AddSectionModal(props: AddSectionModalProps) {
+const AddSectionModal = (props: AddSectionModalProps) => {
   const style = {
     position: 'absolute' as 'absolute',
     top: '50%',
@@ -22,16 +26,27 @@ function AddSectionModal(props: AddSectionModalProps) {
     p: 4,
   };
 
+  let [title, setTitle] = useState<string>("");
+  let [items, setItems] = useState<string[]>([]);
+
+  const data: TodoSectionData = {
+    title: title,
+    items: items,
+    xs: 4
+  }
+
+  const handleChange = (e: any) => {
+    setTitle(e.target.value);
+  }
+
   return (
     <Modal open={props.showModal} onClose={props.onClose}>
       <Box sx={style}>
         <Typography id="modal-modal-title" variant="h6" component="h2">
-        Text in a modal
+          Text in a modal
         </Typography>
-        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-        </Typography>
-        <Button variant="contained" onClick={props.onClickFinishButton}>
+        <TextField id="standard-basic" label="Title" variant="standard" onChange={handleChange} />
+        <Button variant="contained" onClick={(e) => props.onClickFinishButton(data)}>
           Finish
         </Button>
       </Box>
