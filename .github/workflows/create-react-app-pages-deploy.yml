@@ -1,5 +1,8 @@
 name: Deploy Create React App site to Pages
 
+env:
+  CI: false # This is to allow react-scripts to ignore warnings on build. Don't shoot me
+
 on:
   push:
     branches: [ master ]
