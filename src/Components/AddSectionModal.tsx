@@ -28,6 +28,7 @@ const AddSectionModal = (props: AddSectionModalProps) => {
 
   let [title, setTitle] = useState<string>("");
   let [items, setItems] = useState<string[]>([]);
+  setItems(items); // temp 
 
   const data: TodoSectionData = {
     title: title,

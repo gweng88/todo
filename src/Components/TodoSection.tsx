@@ -16,6 +16,7 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
 
 function TodoSection(data : TodoSectionData) {
   let [timer, setTimer] = useState(Date.now() + 10000)
+  setTimer(timer) // temp
 
   useEffect(() => {
     
