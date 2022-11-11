@@ -28,7 +28,6 @@ const AddSectionModal = (props: AddSectionModalProps) => {
 
   let [title, setTitle] = useState<string>("");
   let [items, setItems] = useState<string[]>([]);
-  setItems(items); // temp 
 
   const data: TodoSectionData = {
     title: title,
@@ -39,14 +38,18 @@ const AddSectionModal = (props: AddSectionModalProps) => {
   const handleChange = (e: any) => {
     setTitle(e.target.value);
   }
+  const handleChangeItems = (e: any) => {
+    setItems([...items, e.target.value])
+  }
 
   return (
     <Modal open={props.showModal} onClose={props.onClose}>
       <Box sx={style}>
         <Typography id="modal-modal-title" variant="h6" component="h2">
-          Text in a modal
+          Add new todo note.
         </Typography>
         <TextField id="standard-basic" label="Title" variant="standard" onChange={handleChange} />
+        <TextField id="standard-basic" label="Items" variant="standard" onChange={handleChangeItems} />
         <Button variant="contained" onClick={(e) => props.onClickFinishButton(data)}>
           Finish
         </Button>

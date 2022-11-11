@@ -15,8 +15,7 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
 }));
 
 function TodoSection(data : TodoSectionData) {
-  let [timer, setTimer] = useState(Date.now() + 10000)
-  setTimer(timer) // temp
+  // let [timer, setTimer] = useState(Date.now() + 10000)
 
   useEffect(() => {
     
@@ -29,7 +28,8 @@ function TodoSection(data : TodoSectionData) {
           {data.title}
         </Typography>
         <Typography variant="h5" component="div">
-          {timer}
+          {//timer
+          }
         </Typography>
         <Grid container columnSpacing={1} direction="column" alignContent="flex-start">
           {data.items && data.items.map(i => <TodoItem content={i}/>)}
