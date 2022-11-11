@@ -1,4 +1,5 @@
-name: Deploy Create React App site to Pages
+# Workflow for deploying a create-react-app to Github Pages
+name: deploy (create-react-app)
 
 env:
   CI: false # This is to allow react-scripts to ignore warnings on build. Don't shoot me
